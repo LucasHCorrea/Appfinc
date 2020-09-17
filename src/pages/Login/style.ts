@@ -4,11 +4,10 @@ import imgBackground from '../../assets/background.png';
 
 export const Container = styled.div`
   width: 100%;
-  height: 100%;
-  position: absolute;
+  height: 100vh;
+  display: flex;
   top: 0;
   left: 0;
-  display: flex;
   justify-content: center;
   align-items: center;
   background: url(${imgBackground}) no-repeat center;
@@ -39,25 +38,7 @@ export const Content = styled.div`
       font-size: 58px;
       color: #ffffff;
     }
-    input {
-      background: rgba(15, 15, 15, 0.29);
-      border: 1px solid #fffbfb;
-      box-sizing: border-box;
-      border-radius: 50px;
-      min-height: 80px;
-      max-width: 520px;
-      padding: 0 0 0 150px;
 
-      font-family: Roboto, sans-serif;
-      font-size: 48px;
-      line-height: 56px;
-      align-items: center;
-      color: #ffffff;
-
-      & + input {
-        margin-top: 32px;
-      }
-    }
     button {
       width: 514px;
       height: 78px;
@@ -77,19 +58,6 @@ export const Content = styled.div`
 
       &:hover {
         background-color: ${shade(0.2, 'rgba(238, 240, 245, 0.4)')};
-      }
-    }
-
-    svg {
-      width: 46px;
-      min-height: 45px;
-      position: absolute;
-      margin-top: 18px;
-      margin-left: 37px;
-      color: #ffffff;
-
-      & + svg {
-        margin-top: 131px;
       }
     }
   }
