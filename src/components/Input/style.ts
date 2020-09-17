@@ -21,14 +21,14 @@ export const Container = styled.div`
     background: transparent;
     color: #ffffff;
     min-height: 80px;
-    max-width: 340px;
-    margin-left: 68px;
+    max-width: 700px;
+    margin-left: 25px;
 
     border: 0;
     font-family: Roboto, sans-serif;
     line-height: 56px;
     align-items: center;
-    font-size: 48px;
+    font-size: 28px;
     line-height: 56px;
 
     /*background: #000;
