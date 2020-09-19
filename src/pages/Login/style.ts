@@ -20,9 +20,9 @@ export const Content = styled.div`
   box-sizing: border-box;
   border-radius: 20px;
   display: flex;
-  max-width: 685px;
-  min-height: 691px;
-
+  max-width: 590px;
+  min-height: 502px;
+  padding: 0 35px 0;
   /*width: 685px;
   height: 691px;*/
 
@@ -30,13 +30,16 @@ export const Content = styled.div`
     text-align: center;
 
     h1 {
-      margin-top: 110px;
-      margin-left: 200px;
+      margin-top: 22px;
+
       margin-right: 210px;
       margin-bottom: 38px;
       font-family: Roboto, sans-serif;
       font-size: 58px;
       color: #ffffff;
+
+      max-width: 590px;
+      width: 100%;
     }
   }
 `;

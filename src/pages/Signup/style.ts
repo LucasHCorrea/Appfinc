@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { shade } from 'polished';
 
 export const Container = styled.div`
   width: 100%;
@@ -6,6 +7,7 @@ export const Container = styled.div`
   display: flex;
   align-items: stretch;
 
+  background-size: cover;
   background: linear-gradient(
       108.88deg,
       rgba(0, 12, 19, 0.28) 26.17%,
@@ -32,6 +34,7 @@ export const Content = styled.div`
   box-sizing: border-box;
   width: 100%;
   max-width: 590px;
+  /*display: flex;*/
 
   form {
     text-align: center;
@@ -47,6 +50,7 @@ export const Content = styled.div`
 export const Background = styled.div``;
 
 export const ContentHide = styled.div`
+  width: 100%;
   max-width: 21px;
   min-height: 135px;
   align-items: stretch;
@@ -56,5 +60,12 @@ export const ContentHide = styled.div`
   button {
     width: 100%;
     flex-direction: column;
+    border-radius: 30px 0px 0px 30px;
+    background-color: #c4c4c4;
+    border: 1px solid #c4c4c4;
+
+    &:hover {
+      background-color: ${shade(0.2, '#C4C4C4')};
+    }
   }
 `;
