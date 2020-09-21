@@ -101,3 +101,40 @@ export const ContentHide = styled.div<ContentHide>`
       }
     `}
 `;
+
+export const ContainerLogin = styled.div`
+  background: rgba(111, 110, 110, 0.24);
+  border: 1px solid #ffffff;
+  box-sizing: border-box;
+  border-radius: 20px;
+  display: flex;
+  max-width: 590px;
+  min-height: 502px;
+  width: 100%;
+  margin: auto;
+
+  align-items: center;
+
+  padding: 0 35px 0;
+
+  form {
+    text-align: center;
+    max-width: 100%;
+
+    h1 {
+      margin-top: 22px;
+
+      margin-right: 210px;
+      margin-bottom: 38px;
+      font-family: Roboto, sans-serif;
+      font-size: 58px;
+      color: #ffffff;
+
+      max-width: 590px;
+      width: 100%;
+    }
+    button {
+      max-width: 100%;
+    }
+  }
+`;

@@ -1,12 +1,14 @@
-import React, { useCallback, useRef } from 'react';
+import React, { useCallback, useRef, useState } from 'react';
 import { FormHandles } from '@unform/core';
 import { Form } from '@unform/web';
 import * as Yup from 'yup';
 
-import { FaUserAlt, FaLock, FaEnvelope } from 'react-icons/fa';
+import { FaUserAlt, FaLock, FaEnvelope, FaUserPlus } from 'react-icons/fa';
 
 import styled from 'styled-components';
+/* import { isDOMComponent } from 'react-dom/test-utils'; */
 import getValidationErrors from '../../Utils/getValidationErrors';
+
 import { Container, Content, Background, ContentHide } from './style';
 
 import Input from '../../components/Input';
@@ -14,6 +16,7 @@ import Button from '../../components/Button';
 
 const Signup: React.FC = () => {
   const formRef = useRef<FormHandles>(null);
+  const [isOpen, setOpen] = useState(false);
 
   const handleSubmit = useCallback(async (data: object) => {
     try {
@@ -24,28 +27,27 @@ const Signup: React.FC = () => {
         email: Yup.string()
           .required('E-mail obrigatório')
           .email('Digite um e-mail válido'),
-        password: Yup.string().required('No mínimo 6 dígitos').min(6),
+        password: Yup.string().required().min(6, 'No mínimo 6 dígitos'),
       });
       await schema.validate(data, {
         abortEarly: false,
       });
     } catch (err) {
       const errors = getValidationErrors(err);
-
       formRef.current?.setErrors(errors);
     }
   }, []);
 
   return (
     <Container>
-      <Content>
+      <Content isOpen={isOpen}>
         <Form ref={formRef} onSubmit={handleSubmit}>
           <h1>Sign up</h1>
 
-          <Input name="Username" icon={FaUserAlt} placeholder="Username" />
-          <Input name="Email" icon={FaEnvelope} placeholder="E-mail" />
+          <Input name="name" icon={FaUserAlt} placeholder="Username" />
+          <Input name="email" icon={FaEnvelope} placeholder="E-mail" />
           <Input
-            name="Password"
+            name="password"
             icon={FaLock}
             type="password"
             placeholder="Password"
@@ -54,8 +56,9 @@ const Signup: React.FC = () => {
           <Button type="submit">Sign up</Button>
         </Form>
 
-        <ContentHide>
-          <button type="submit"> </button>
+        <ContentHide isOpen={isOpen}>
+          <FaUserPlus />
+          <input onClick={() => setOpen(!isOpen)} type="button" />
         </ContentHide>
       </Content>
       <Background />
