@@ -1,5 +1,7 @@
 import styled, { css } from 'styled-components';
 
+import Tooltip from '../Tooltip';
+
 interface ContainerProps {
   isFocused: boolean;
   isFilled: boolean;
@@ -50,7 +52,8 @@ export const Container = styled.div<ContainerProps>`
     background: transparent;
     color: #ffffff;
     min-height: 80px;
-    max-width: 360px;
+    max-width: 340px;
+    margin-right: 5px;
 
     border: 0;
     font-family: Roboto, sans-serif;
@@ -66,11 +69,22 @@ export const Container = styled.div<ContainerProps>`
   }
 `;
 
-export const Error = styled.div`
-  display: flex;
-  align-items: center;
+export const Error = styled(Tooltip)`
+  width: 30px;
   height: 100%;
+  position: flex;
+  margin-right: 3px;
 
-  svg: {
+  > svg {
+    margin: auto;
+  }
+
+  span {
+    background: #c53030;
+    color: #ffffff;
+
+    &::before {
+      border-color: #c53030 transparent;
+    }
   }
 `;

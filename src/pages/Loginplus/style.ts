@@ -1,4 +1,4 @@
-import styled, { css } from 'styled-components';
+import styled, { css, keyframes } from 'styled-components';
 import { shade } from 'polished';
 
 interface ContentHide {
@@ -79,9 +79,11 @@ export const ContentHide = styled.div<ContentHide>`
     border-radius: 30px 0px 0px 30px;
     background-color: #e4e4e4;
     border: 1px #e4e4e4;
+    cursor: pointer;
 
     &:hover {
       background-color: ${shade(0.2, '#E4E4E4')};
+      transition: background-color 0.4s;
     }
   }
   svg {
@@ -90,6 +92,12 @@ export const ContentHide = styled.div<ContentHide>`
     margin-left: -10px;
     margin-top: 40px;
     width: 50px;
+    cursor: pointer;
+
+    &:hover {
+      color: ${shade(0.2, '#19774a')};
+      transition: background-color 0.4s;
+    }
   }
 
   ${(props) =>
@@ -102,6 +110,18 @@ export const ContentHide = styled.div<ContentHide>`
     `}
 `;
 
+const appearFromLeft = keyframes`
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0)
+  }
+
+`;
+
 export const ContainerLogin = styled.div`
   background: rgba(111, 110, 110, 0.24);
   border: 1px solid #ffffff;
@@ -112,6 +132,8 @@ export const ContainerLogin = styled.div`
   min-height: 502px;
   width: 100%;
   margin: auto;
+
+  animation: ${appearFromLeft} 1s;
 
   align-items: center;
 

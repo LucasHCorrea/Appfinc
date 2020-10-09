@@ -30,6 +30,7 @@
     ],
     "rules": {
       "@typescript-eslint/ban-types": "off",
+      "@typescript-eslint/no-unused-vars" : "off",
       "no-unused-expressions": "off",
       "react/prop-types": "off",
       "react/jsx-props-no-spreading": "off",
